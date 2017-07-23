@@ -1,0 +1,40 @@
+<p>
+    employee works! {{name}}
+</p>
+<input class="form-control" type="text" [value]="newName" name="name" [(ngModel)]="newName">
+<button class="btn btn-primary" (click)="updateName(newName)">Update Name</button>
+<div *ngIf="isVisible">
+    The div is visible
+</div>
+<div *ngIf="!isVisible">
+    The div is not visible
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Address
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>
+                {{emp.id}}
+            </td>
+            <td>
+                {{emp.name}}
+            </td>
+            <td>
+                {{emp.address}}
+            </td>
+        </tr>
+    </tbody>
+</table>
