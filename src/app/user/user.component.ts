@@ -25,4 +25,8 @@ export class UserComponent {
     this.toggleTable = !this.toggleTable;
   }
 
+  toggleVisible(isVisible: boolean) {
+    this.toggleTable = isVisible;
+  }
+
 }

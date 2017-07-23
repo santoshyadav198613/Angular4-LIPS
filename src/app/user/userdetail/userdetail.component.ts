@@ -1,4 +1,4 @@
-import { Component, OnInit ,  Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-userdetail',
@@ -8,9 +8,16 @@ import { Component, OnInit ,  Input } from '@angular/core';
 export class UserdetailComponent implements OnInit {
   @Input() users: any[];
   @Input() title: string;
+  @Output() onHide = new EventEmitter<boolean>();
+  isVisible = true;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  hideClick() {
+    this.onHide.emit(true);
+    this.isVisible = false;
   }
 
 }
