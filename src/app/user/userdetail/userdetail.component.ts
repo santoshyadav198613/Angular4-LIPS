@@ -17,7 +17,7 @@ export class UserdetailComponent implements OnInit {
 
   hideClick() {
     this.onHide.emit(true);
-    this.isVisible = false;
+    this.isVisible = !this.isVisible;
   }
 
 }
