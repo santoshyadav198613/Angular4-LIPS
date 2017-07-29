@@ -1,12 +1,13 @@
 import {
   Component, OnInit, Input, Output, EventEmitter,
-  OnChanges, SimpleChanges
+  OnChanges, SimpleChanges , ChangeDetectionStrategy
 } from '@angular/core';
 
 @Component({
   selector: 'app-userdetail',
   templateUrl: './userdetail.component.html',
-  styleUrls: ['./userdetail.component.css']
+  styleUrls: ['./userdetail.component.css'],
+  changeDetection : ChangeDetectionStrategy.OnPush
 })
 export class UserdetailComponent implements OnInit, OnChanges {
   @Input() users: any[];
@@ -18,7 +19,6 @@ export class UserdetailComponent implements OnInit, OnChanges {
   ngOnChanges(obj: SimpleChanges) {
     console.log(obj);
   }
-
 
   ngOnInit() {
   }

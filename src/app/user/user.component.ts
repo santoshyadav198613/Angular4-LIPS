@@ -46,4 +46,9 @@ export class UserComponent implements OnInit, DoCheck {
     this.title = 'hello universe';
   }
 
+  addUser() {
+    let user = { userId: 4, name: 'test4', address: 'test4' };
+    this.userList = [user];
+  }
+
 }
