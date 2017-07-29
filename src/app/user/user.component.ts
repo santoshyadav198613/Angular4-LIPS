@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, DoCheck } from '@angular/core';
 import { UserdetailComponent } from './userdetail/userdetail.component';
 
 @Component({
@@ -6,7 +6,7 @@ import { UserdetailComponent } from './userdetail/userdetail.component';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent {
+export class UserComponent implements OnInit, DoCheck {
   name: string;
   userList = [{ userId: 1, name: 'test', address: 'test' }, {
     userId: 2, name: 'test1', address: 'test1'
@@ -16,20 +16,17 @@ export class UserComponent {
   userDetails: UserdetailComponent;
   @ViewChildren(UserdetailComponent)
   userDetailList: QueryList<UserdetailComponent>;
+  title = 'Hello world!';
   constructor() { }
 
-  // ngOnChanges(obj: SimpleChanges) {
-  //   let data = obj;
-  // }
 
   ngOnInit() {
     this.name = 'test';
   }
 
-  // ngDoCheck() {
-  //   let data = this.name;
-  // }
-
+  ngDoCheck() {
+    let data = this.name;
+  }
 
   updateName() {
     this.name = 'new name';
@@ -45,6 +42,8 @@ export class UserComponent {
     this.toggleTable = isVisible;
   }
 
-
+  changeTitle() {
+    this.title = 'hello universe';
+  }
 
 }

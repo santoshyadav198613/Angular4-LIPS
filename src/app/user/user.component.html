@@ -1,10 +1,11 @@
 <p>
     user works! {{name}}
-    <input class="form-control" type="text" [value]="name">
+    <input class="form-control" type="text" id="name" [value]="name">
 </p>
 <div [innerText]="name">{{name}}</div>
 <button class="btn btn-primary" (click)="updateName()">Update Name</button>
 <button class="btn btn-primary" (click)="toggle()">Show/Hide Table</button>
+<app-userdetail [users]="userList" [title]="title" (onHide)="toggleVisible($event)"></app-userdetail>
 <app-userdetail [users]="userList" [title]="'User List'" (onHide)="toggleVisible($event)"></app-userdetail>
 <app-userdetail [users]="userList" [title]="'User List'" (onHide)="toggleVisible($event)"></app-userdetail>
-<app-userdetail [users]="userList" [title]="'User List'" (onHide)="toggleVisible($event)"></app-userdetail>
+<button class="btn btn-primary" (click)="changeTitle()">Change Title</button>
