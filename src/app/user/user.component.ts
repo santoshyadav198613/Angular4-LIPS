@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ViewChildren, QueryList, DoCheck } from '@angular/core';
 import { UserdetailComponent } from './userdetail/userdetail.component';
-import { UserService } from '../service/user.service';
+import { UserService } from '../service/user/user.service';
+import { User } from '../service/user/user';
 
 @Component({
   selector: 'app-user',
@@ -10,7 +11,7 @@ import { UserService } from '../service/user.service';
 })
 export class UserComponent implements OnInit, DoCheck {
   name: string;
-  userList: any[];
+  userList: User[];
   toggleTable = true;
   @ViewChild(UserdetailComponent)
   userDetails: UserdetailComponent;

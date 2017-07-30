@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from '../service/employee/employee.service';
+import { Employee } from '../service/employee/employee';
 
 @Component({
   selector: 'app-employee',
@@ -9,22 +11,11 @@ export class EmployeeComponent implements OnInit {
   name = 'test';
   newName: string;
   isVisible: boolean;
-  employees = [{
-    id: 1,
-    name: 'test',
-    address: 'pune'
-  }, {
-    id: 2,
-    name: 'test1',
-    address: 'mumbai'
-  }, {
-    id: 3,
-    name: 'test2',
-    address: 'pune'
-  }];
-  constructor() { }
+  employees: Employee[];
+  constructor(private _empService: EmployeeService) { }
 
   ngOnInit() {
+    this.employees = this._empService.getEmployees();
   }
 
   updateName(name: string) {
