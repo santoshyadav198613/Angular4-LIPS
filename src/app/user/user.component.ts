@@ -1,27 +1,28 @@
 import { Component, OnInit, ViewChild, ViewChildren, QueryList, DoCheck } from '@angular/core';
 import { UserdetailComponent } from './userdetail/userdetail.component';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
+  providers: [UserService]
 })
 export class UserComponent implements OnInit, DoCheck {
   name: string;
-  userList = [{ userId: 1, name: 'test', address: 'test' }, {
-    userId: 2, name: 'test1', address: 'test1'
-  }, { userId: 3, name: 'test2', address: 'test2' }];
+  userList: any[];
   toggleTable = true;
   @ViewChild(UserdetailComponent)
   userDetails: UserdetailComponent;
   @ViewChildren(UserdetailComponent)
   userDetailList: QueryList<UserdetailComponent>;
   title = 'Hello world!';
-  constructor() { }
+  constructor(private _userService: UserService) { }
 
 
   ngOnInit() {
     this.name = 'test';
+    this.userList = this._userService.getUser();
   }
 
   ngDoCheck() {
