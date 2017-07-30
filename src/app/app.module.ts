@@ -8,9 +8,7 @@ import { UserComponent } from './user/user.component';
 import { UserdetailComponent } from './user/userdetail/userdetail.component';
 import { EmployeeService } from '../app/service/employee/employee.service';
 
-import { ApiEndpoint } from '../app/service/api/Iapi';
 import { apiEndPoint, EndPoint } from '../app/service/api/api.value';
-
 @NgModule({
   declarations: [
     AppComponent,

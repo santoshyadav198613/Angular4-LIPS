@@ -1,6 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
 import { User } from './user';
-
 import { ApiEndpoint } from '../api/Iapi';
 import { EndPoint, apiEndPoint } from '../api/api.value';
 
@@ -10,7 +9,7 @@ export class UserService {
     userId: 2, name: 'test1', address: 'test1'
   }, { userId: 3, name: 'test2', address: 'test2' }];
 
-  constructor( @Inject(EndPoint) endPoint: ApiEndpoint) {
+  constructor(@Inject(EndPoint) endPoint: ApiEndpoint) {
     console.log(endPoint);
   }
 
