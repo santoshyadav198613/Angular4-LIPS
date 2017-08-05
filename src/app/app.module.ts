@@ -9,12 +9,14 @@ import { UserdetailComponent } from './user/userdetail/userdetail.component';
 import { EmployeeService } from '../app/service/employee/employee.service';
 
 import { apiEndPoint, EndPoint } from '../app/service/api/api.value';
+import { ProductComponent } from './product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     UserComponent,
-    UserdetailComponent
+    UserdetailComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
