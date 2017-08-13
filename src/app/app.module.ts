@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router'
+import { RoutingModule } from '../app/routingmodule/routing.module';
 
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee.component';
@@ -29,15 +29,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule, RouterModule.forRoot([
-      { path: 'user', component: UserComponent },
-      { path: 'customer', component: CustomerComponent },
-      { path: 'employee', component: EmployeeComponent },
-      { path: 'product', component: ProductComponent },
-      { path: 'order', component: OrderComponent },
-      { path: '', redirectTo: 'user', pathMatch: 'full' },
-      { path: '**', component: PagenotfoundComponent }
-    ])
+    ReactiveFormsModule,
+    RoutingModule
   ],
   providers: [{ provide: EmployeeService, useClass: EmployeeService },
   { provide: EndPoint, useValue: apiEndPoint }],
