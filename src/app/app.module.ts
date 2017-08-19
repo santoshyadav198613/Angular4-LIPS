@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { UserdetailComponent } from './user/userdetail/userdetail.component';
 import { EmployeeService } from '../app/service/employee/employee.service';
+import { LoginService } from '../app/service/login/login.service';
 
 import { apiEndPoint, EndPoint } from '../app/service/api/api.value';
 import { ProductComponent } from './product/product.component';
 import { OrderComponent } from './order/order.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     UserdetailComponent,
     ProductComponent,
     OrderComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     RoutingModule
   ],
   providers: [{ provide: EmployeeService, useClass: EmployeeService },
-  { provide: EndPoint, useValue: apiEndPoint }],
+  { provide: EndPoint, useValue: apiEndPoint }, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

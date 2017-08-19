@@ -6,15 +6,16 @@ import { UserComponent } from '../user/user.component';
 import { ProductComponent } from '../product/product.component';
 import { OrderComponent } from '../order/order.component';
 import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
-
+import { LoginComponent } from '../login/login.component';
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forRoot([
+      { path: 'login', component: LoginComponent },
       { path: 'user', component: UserComponent },
       { path: 'product', component: ProductComponent },
       { path: 'order', component: OrderComponent },
-      { path: '', redirectTo: 'user', pathMatch: 'full' },
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', component: PagenotfoundComponent }
     ])
   ],
