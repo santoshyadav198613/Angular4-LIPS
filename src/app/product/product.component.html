@@ -3,7 +3,7 @@
 <form #productForm="ngForm" (submit)="add()" novalidate>
     <div class="form-group">
         <label for="pId">Product ID</label>
-        <input type="text" class="form-control" id="pId" placeholder="Product Id" required name="pid" [(ngModel)]="product.id" #pid="ngModel">
+        <input type="number" class="form-control" id="pId" placeholder="Product Id" required name="pid" [(ngModel)]="product.id" #pid="ngModel">
         <!--<div [hidden]="pid.valid" class="alert alert-danger">
             Product Id is required. --Control level validation
         </div>-->
@@ -22,5 +22,8 @@
     </div>
     <button type="submit" [disabled]="!productForm.valid" class="btn btn-primary">Submit</button>
 </form>
+
+<hr>
+<app-productlist></app-productlist>
 
 <!--{{product | json}} {{productForm.valid}}-->

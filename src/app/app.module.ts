@@ -4,6 +4,7 @@ import { RoutingModule } from '../app/routingmodule/routing.module';
 import { CustomerModule } from '../app/customer/customer.module';
 import { EmployeeModule } from '../app/employee/employee.module';
 import { SharedModule } from '../app/sharedmodule/shared.module';
+import { ProductModule } from '../app/product/product.module';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -12,7 +13,6 @@ import { EmployeeService } from '../app/service/employee/employee.service';
 import { LoginService } from '../app/service/login/login.service';
 
 import { apiEndPoint, EndPoint } from '../app/service/api/api.value';
-import { ProductComponent } from './product/product.component';
 import { OrderComponent } from './order/order.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoginComponent } from './login/login.component';
@@ -22,7 +22,6 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     UserComponent,
     UserdetailComponent,
-    ProductComponent,
     OrderComponent,
     PagenotfoundComponent,
     LoginComponent
@@ -32,6 +31,7 @@ import { LoginComponent } from './login/login.component';
     SharedModule,
     CustomerModule,
     EmployeeModule,
+    ProductModule,
     RoutingModule
   ],
   providers: [{ provide: EmployeeService, useClass: EmployeeService },

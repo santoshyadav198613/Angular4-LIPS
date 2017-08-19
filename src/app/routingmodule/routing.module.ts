@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router'
 
 import { UserComponent } from '../user/user.component';
-import { ProductComponent } from '../product/product.component';
 import { OrderComponent } from '../order/order.component';
 import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
 import { LoginComponent } from '../login/login.component';
@@ -13,7 +12,6 @@ import { LoginComponent } from '../login/login.component';
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
       { path: 'user', component: UserComponent },
-      { path: 'product', component: ProductComponent },
       { path: 'order', component: OrderComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', component: PagenotfoundComponent }
