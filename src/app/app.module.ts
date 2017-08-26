@@ -17,6 +17,8 @@ import { OrderComponent } from './order/order.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoginComponent } from './login/login.component';
 
+import { AuthGuard } from '../app/service/guard/auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,7 @@ import { LoginComponent } from './login/login.component';
     RoutingModule
   ],
   providers: [{ provide: EmployeeService, useClass: EmployeeService },
-  { provide: EndPoint, useValue: apiEndPoint }, LoginService],
+  { provide: EndPoint, useValue: apiEndPoint }, LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
