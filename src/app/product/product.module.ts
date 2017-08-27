@@ -25,13 +25,16 @@ import { ProductDetailsGuard } from '../service/guard/product-details.guard';
                 canActivate: [AuthGuard],
                 resolve: {
                     name: ResolveDemo
-                }
-            },
-            {
-                path: 'product/:id', component: ProductdetailsComponent,
-                resolve: {
-                    productDetails: ProductDetailsGuard
-                }
+                },
+                children: [
+                    {
+                        path: ':id', component: ProductdetailsComponent,
+                        resolve: {
+                            productDetails: ProductDetailsGuard
+                        },
+                        canActivateChild: [AuthGuard]
+                    }
+                ]
             }
         ])
     ],

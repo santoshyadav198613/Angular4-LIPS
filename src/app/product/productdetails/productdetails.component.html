@@ -2,4 +2,31 @@
     Product Details for Product Id: {{productData[0].id}}
 </p>
 
-{{productData | json }}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productData">
+            <td>
+                {{product.id}}
+            </td>
+            <td>
+                {{product.name}}
+            </td>
+            <td>
+                {{product.price}}
+            </td>
+        </tr>
+    </tbody>
+</table>
