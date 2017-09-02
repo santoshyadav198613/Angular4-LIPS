@@ -4,7 +4,6 @@ import { RoutingModule } from '../app/routingmodule/routing.module';
 import { CustomerModule } from '../app/customer/customer.module';
 import { EmployeeModule } from '../app/employee/employee.module';
 import { SharedModule } from '../app/sharedmodule/shared.module';
-import { ProductModule } from '../app/product/product.module';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -33,7 +32,6 @@ import { AuthGuard } from '../app/service/guard/auth.guard';
     SharedModule,
     CustomerModule,
     EmployeeModule,
-    ProductModule,
     RoutingModule
   ],
   providers: [{ provide: EmployeeService, useClass: EmployeeService },

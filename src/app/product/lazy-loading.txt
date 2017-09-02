@@ -1,0 +1,6 @@
+Steps to configure lazy loading
+1. you should have a module
+2. Your module shoud not share component/service/pipes 
+with other component or module.
+3. Add a route with loadChildren property,
+give relative path to module name and add #moduleClassName

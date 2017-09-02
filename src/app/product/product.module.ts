@@ -21,7 +21,7 @@ import { ProductDetailsGuard } from '../service/guard/product-details.guard';
         CommonModule,
         RouterModule.forChild([
             {
-                path: 'product', component: ProductComponent,
+                path: '', component: ProductComponent,
                 canActivate: [AuthGuard],
                 resolve: {
                     name: ResolveDemo
