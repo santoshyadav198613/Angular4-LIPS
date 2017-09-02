@@ -12,7 +12,6 @@ import { ResolveDemo } from '../service/guard/resolve-demo.guard';
 
 import { ProductDetailsGuard } from '../service/guard/product-details.guard';
 
-
 @NgModule({
     declarations: [ProductComponent,
         ProductlistComponent,

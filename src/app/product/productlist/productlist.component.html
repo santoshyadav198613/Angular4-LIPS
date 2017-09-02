@@ -1,5 +1,6 @@
 <h1>Product List</h1>
 
+<input class="form-control" type="number" [(ngModel)]="price" name="price" placeholder="Price">
 <table class="table">
     <thead>
         <tr>
@@ -21,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of productList">
+        <tr *ngFor="let product of productList | price : price ">
             <td>
                 {{product.id}}
             </td>
@@ -32,7 +33,7 @@
                 {{product.name}}
             </td>
             <td>
-                {{product.price}}
+                {{product.price | inr :1}}
             </td>
             <td>
                 <button [routerLink]="['/product',product.id]" class="btn btn-primary">Details</button>

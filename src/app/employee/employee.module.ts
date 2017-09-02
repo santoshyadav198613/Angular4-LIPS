@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../sharedmodule/shared.module';
 import { EmployeeComponent } from './employee.component';
 
+
 @NgModule({
     declarations: [EmployeeComponent],
     imports: [SharedModule,

@@ -27,7 +27,7 @@
     <tbody>
         <tr *ngFor="let emp of employees">
             <td>
-                {{emp.id}}
+                {{emp.id | inr : 2}}
             </td>
             <td>
                 {{emp.name}}
