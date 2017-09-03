@@ -6,6 +6,7 @@ import { UserComponent } from '../user/user.component';
 import { OrderComponent } from '../order/order.component';
 import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
 import { LoginComponent } from '../login/login.component';
+import { PostComponent } from '../post/post.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -13,6 +14,7 @@ import { LoginComponent } from '../login/login.component';
       { path: 'login', component: LoginComponent },
       { path: 'user', component: UserComponent },
       { path: 'order', component: OrderComponent },
+      { path: 'post', component: PostComponent },
       { path: 'product', loadChildren: '../product/product.module#ProductModule' },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', component: PagenotfoundComponent }

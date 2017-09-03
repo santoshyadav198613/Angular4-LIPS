@@ -17,6 +17,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthGuard } from '../app/service/guard/auth.guard';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AuthGuard } from '../app/service/guard/auth.guard';
     UserdetailComponent,
     OrderComponent,
     PagenotfoundComponent,
-    LoginComponent
+    LoginComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
