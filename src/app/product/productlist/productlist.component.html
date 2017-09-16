@@ -38,6 +38,9 @@
             <td>
                 <button [routerLink]="['/product',product.id]" class="btn btn-primary">Details</button>
             </td>
+            <td>
+                <button md-raised-button color="primary" (click)="openEdit(product)" type="button">Edit</button>
+            </td>
         </tr>
     </tbody>
 </table>

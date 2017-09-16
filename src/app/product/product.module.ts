@@ -11,11 +11,13 @@ import { AuthGuard } from '../service/guard/auth.guard';
 import { ResolveDemo } from '../service/guard/resolve-demo.guard';
 
 import { ProductDetailsGuard } from '../service/guard/product-details.guard';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
 @NgModule({
     declarations: [ProductComponent,
         ProductlistComponent,
-        ProductdetailsComponent],
+        ProductdetailsComponent,
+        ProductEditComponent],
     imports: [SharedModule,
         CommonModule,
         RouterModule.forChild([
@@ -37,6 +39,7 @@ import { ProductDetailsGuard } from '../service/guard/product-details.guard';
             }
         ])
     ],
-    providers: [ProductService, ResolveDemo, ProductDetailsGuard]
+    providers: [ProductService, ResolveDemo, ProductDetailsGuard],
+    entryComponents: [ProductEditComponent]
 })
 export class ProductModule { }

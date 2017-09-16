@@ -1,0 +1,17 @@
+<h2 md-dialog-title>Edit Product</h2>
+<md-dialog-content>
+    <form #editForm="ngForm" novalidate>
+        <div class="form-group">
+            <input class="form-control" type="text" [(ngModel)]="product.name" name="name" placeholder="Product Name">
+        </div>
+        <div>
+            <input class="form-control" type="number" [(ngModel)]="product.price" name="price" placeholder="Price">
+        </div>
+    </form>
+
+</md-dialog-content>
+<md-dialog-actions>
+    <button md-raised-button color="primary" md-dialog-close>No</button>
+    <!-- Can optionally provide a result for the closing dialog. -->
+    <button md-raised-button color="primary" (click)="editData()" type="submit">Yes</button>
+</md-dialog-actions>
