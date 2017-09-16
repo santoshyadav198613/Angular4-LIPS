@@ -5,6 +5,7 @@ import { CustomerModule } from '../app/customer/customer.module';
 import { EmployeeModule } from '../app/employee/employee.module';
 import { SharedModule } from '../app/sharedmodule/shared.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -33,6 +34,7 @@ import { ApiInterceptor } from './interceptor/api.interceptor';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     SharedModule,
     CustomerModule,
     EmployeeModule,
@@ -40,7 +42,7 @@ import { ApiInterceptor } from './interceptor/api.interceptor';
   ],
   providers: [{ provide: EmployeeService, useClass: EmployeeService },
   { provide: EndPoint, useValue: apiEndPoint }, LoginService, AuthGuard,
-  { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor , multi: true }],
+  { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
