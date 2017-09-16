@@ -14,7 +14,7 @@ export class PostService {
   }
 
   getPosts() {
-    return this.http.get<Post[]>(this.apiEndPoint + 'posts', { headers: new HttpHeaders().set('token', this.token) });
+    return this.http.get<Post[]>(this.apiEndPoint + 'posts');
   }
 
   addPost(post: Post) {

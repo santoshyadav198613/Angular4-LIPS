@@ -11,7 +11,6 @@ export class LoginService {
       this.isValidUser = true;
       return true;
     }
-    else
-    { return false; }
+    return false;
   }
 }

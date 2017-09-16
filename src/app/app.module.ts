@@ -4,6 +4,7 @@ import { RoutingModule } from '../app/routingmodule/routing.module';
 import { CustomerModule } from '../app/customer/customer.module';
 import { EmployeeModule } from '../app/employee/employee.module';
 import { SharedModule } from '../app/sharedmodule/shared.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -18,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 
 import { AuthGuard } from '../app/service/guard/auth.guard';
 import { PostComponent } from './post/post.component';
+import { ApiInterceptor } from './interceptor/api.interceptor';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { PostComponent } from './post/post.component';
     RoutingModule
   ],
   providers: [{ provide: EmployeeService, useClass: EmployeeService },
-  { provide: EndPoint, useValue: apiEndPoint }, LoginService, AuthGuard],
+  { provide: EndPoint, useValue: apiEndPoint }, LoginService, AuthGuard,
+  { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor , multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
