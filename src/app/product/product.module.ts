@@ -12,6 +12,7 @@ import { ResolveDemo } from '../service/guard/resolve-demo.guard';
 
 import { ProductDetailsGuard } from '../service/guard/product-details.guard';
 import { ProductEditComponent } from './product-edit/product-edit.component';
+import { productServiceFactory } from '../service/product/product.factory';
 
 @NgModule({
     declarations: [ProductComponent,
@@ -39,7 +40,8 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
             }
         ])
     ],
-    providers: [ProductService, ResolveDemo, ProductDetailsGuard],
+    providers: [productServiceFactory,
+        ResolveDemo, ProductDetailsGuard],
     entryComponents: [ProductEditComponent]
 })
 export class ProductModule { }
