@@ -21,6 +21,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from '../app/service/guard/auth.guard';
 import { PostComponent } from './post/post.component';
 import { ApiInterceptor } from './interceptor/api.interceptor';
+import { HoverDirective } from './directive/hover.directive';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ApiInterceptor } from './interceptor/api.interceptor';
     OrderComponent,
     PagenotfoundComponent,
     LoginComponent,
-    PostComponent
+    PostComponent,
+    HoverDirective
   ],
   imports: [
     BrowserModule,
