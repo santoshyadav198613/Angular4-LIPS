@@ -373,7 +373,9 @@ module.exports = {
             "inject": true,
             "compile": true,
             "favicon": false,
-            "minify": false,
+            "minify": {
+                removeAttributeQuotes: true
+            },
             "cache": true,
             "showErrors": true,
             "chunks": "all",
