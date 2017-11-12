@@ -8,7 +8,7 @@ import { Product } from '../../service/product/product';
 })
 export class ProductdetailsComponent implements OnInit {
   productId: string;
-  productData: Product[];
+  productData: Product;
   constructor(private _router: ActivatedRoute) { }
 
   ngOnInit() {
