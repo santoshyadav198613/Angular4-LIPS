@@ -22,6 +22,7 @@ import { AuthGuard } from '../app/service/guard/auth.guard';
 import { PostComponent } from './post/post.component';
 import { ApiInterceptor } from './interceptor/api.interceptor';
 import { HoverDirective } from './directive/hover.directive';
+import { PasswordValidatorDirective } from './directive/password-validator.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HoverDirective } from './directive/hover.directive';
     PagenotfoundComponent,
     LoginComponent,
     PostComponent,
-    HoverDirective
+    HoverDirective,
+    PasswordValidatorDirective
   ],
   imports: [
     BrowserModule,
