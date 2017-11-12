@@ -15,7 +15,7 @@ import { PostComponent } from '../post/post.component';
       { path: 'user', component: UserComponent },
       { path: 'order', component: OrderComponent },
       { path: 'post', component: PostComponent },
-      { path: 'product', loadChildren: '../product/product.module#ProductModule' },
+      { path: 'product', loadChildren: '../product/product.module#ProductModule', data: { preload: true } },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', component: PagenotfoundComponent }
     ])

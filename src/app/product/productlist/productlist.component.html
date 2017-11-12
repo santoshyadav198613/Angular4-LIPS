@@ -22,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of productList | price : price ">
+        <tr *ngFor="let product of productList ">
             <td>
                 {{product.id}}
             </td>
@@ -33,7 +33,7 @@
                 {{product.name}}
             </td>
             <td>
-                {{product.price | inr :1}}
+                {{product.price}}
             </td>
             <td>
                 <button [routerLink]="['/product',product.id]" class="btn btn-primary">Details</button>

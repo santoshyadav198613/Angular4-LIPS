@@ -16,7 +16,13 @@ export class ProductlistComponent implements OnInit {
     private dialogService: MdDialog) { }
 
   ngOnInit() {
-    this.productList = this._productService.getProducts();
+    this.loadProductList();
+  }
+
+  loadProductList() {
+    this._productService.getProducts().subscribe(
+      (data) => this.productList = data
+    );
   }
 
   openEdit(product: Product) {
@@ -27,6 +33,14 @@ export class ProductlistComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log(result);
+      if (result !== undefined || !!result) {
+        this._productService.updateProduct(result).subscribe(
+          (data) => {
+            console.log(data)
+            this.loadProductList();
+          }
+        )
+      }
     });
   }
 }
